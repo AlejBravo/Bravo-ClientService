@@ -19,10 +19,7 @@ public class LoanService {
         return newloan;
     }
 
-
     public List<Loan> getAll(){
         return loanRepository.findAll();
     }
-
-
 }

@@ -17,12 +17,8 @@ import java.util.stream.Collectors;
 @Service
 public class ClientService {
 
-    private final ClientRepository clientRepository;
-
     @Autowired
-    public ClientService(ClientRepository clientRepository) {
-        this.clientRepository = clientRepository;
-    }
+    ClientRepository clientRepository;
 
     @Autowired
     LoanFeignClient loanFeignClient;
@@ -71,7 +67,7 @@ public class ClientService {
 
     public Loan saveLoan(Long clientId, Loan loan){
         loan.setClientId(clientId);
-        Loan loanNew = loanFeignClient.saveLoan(loan);
-        return loanNew;
+        Loan newLoan = loanFeignClient.saveLoan(loan);
+        return newLoan;
     }
 }
