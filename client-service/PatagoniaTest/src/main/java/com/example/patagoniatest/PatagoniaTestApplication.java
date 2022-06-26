@@ -9,7 +9,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableFeignClients
 public class PatagoniaTestApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(PatagoniaTestApplication.class, args);
     }
