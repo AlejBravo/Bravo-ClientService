@@ -13,5 +13,5 @@ spring:
   jpa:
     show-sql: true
     hibernate.ddl-auto: update
-    application:
-      name: clientservice
+  application:
+    name: clientservice
