@@ -2,9 +2,11 @@ package com.example.patagoniatest.controller;
 
 import com.example.patagoniatest.entity.Loan;
 import com.example.patagoniatest.model.Client;
+import com.example.patagoniatest.model.Role;
 import com.example.patagoniatest.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +19,25 @@ public class ClientController {
 
     private final ClientService clientService;
 
-    @Autowired
-    public ClientController(ClientService clientService) {
-        this.clientService = clientService;
-    }
-
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
     @GetMapping
     public List<Client> getClients(){
         return clientService.getClients();
+    }
+
+    @PostMapping("/saveRole")
+    public Role saveRole(@RequestBody Role role){
+        return clientService.saveRole(role);
+    }
+
+    @PutMapping("/{fullName}/add/{name}")
+    public void addRole(@PathVariable String fullName, @PathVariable String name){
+        clientService.addRoleToClient(fullName, name);
+    }
+
+    @Autowired
+    public ClientController(ClientService clientService) {
+        this.clientService = clientService;
     }
 
     @GetMapping("/getEarningsAverage")
@@ -56,9 +69,9 @@ public class ClientController {
         clientService.updateClient(client, id);
     }
 
-    @PostMapping("/saveloan/{clientId}")
-    public ResponseEntity<Loan> saveLoan(@PathVariable("clientId") Long clientId, @RequestBody Loan loan) {
-        Loan newLoan = clientService.saveLoan(clientId, loan);
-        return ResponseEntity.ok(loan);
-    }
+//    @PostMapping("/saveloan/{clientId}")
+//    public ResponseEntity<Loan> saveLoan(@PathVariable("clientId") Long clientId, @RequestBody Loan loan) {
+//        Loan newLoan = clientService.saveLoan(clientId, loan);
+//        return ResponseEntity.ok(loan);
+//    }
 }
