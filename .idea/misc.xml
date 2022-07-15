@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/patagoniaTest-main/PatagoniaTest/pom.xml" />
         <option value="$PROJECT_DIR$/loan-service/pom.xml" />
         <option value="$PROJECT_DIR$/client-service/PatagoniaTest/pom.xml" />
+        <option value="$PROJECT_DIR$/subject-service/pom.xml" />
+        <option value="$PROJECT_DIR$/student-service/PatagoniaTest/pom.xml" />
       </list>
     </option>
   </component>
