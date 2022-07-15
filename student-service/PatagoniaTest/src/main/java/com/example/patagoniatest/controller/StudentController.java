@@ -6,7 +6,8 @@ import com.example.patagoniatest.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.Optional;
+
+import java.util.List;
 
 
 @RestController
@@ -20,18 +21,24 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/{id}")
-    public Optional<Student> getStudent(@PathVariable Long id){
-        return studentService.getStudent(id);
+    @GetMapping
+    public List<Student> getAll(){
+        return studentService.getStudents();
     }
+
+    @GetMapping("/{id}")
+    public Student getStudent(@PathVariable Long studentId){
+        return studentService.getStudent(studentId);
+    }
+
     @PostMapping("/addStudent")
     public Student addStudent(@RequestBody Student student){
         return studentService.addStudent(student);
     }
 
     @DeleteMapping("/deleteStudent/{id}")
-    public void deleteStudent(@PathVariable Long id){
-        studentService.deleteStudent(id);
+    public void deleteStudent(@PathVariable Long studentId){
+        studentService.deleteStudent(studentId);
     }
 
     @PostMapping("/saveSubject/{studentId}")
@@ -40,9 +47,11 @@ public class StudentController {
         return ResponseEntity.ok(subject);
     }
 
-//    @GetMapping("/subjects")
-//    public ResponseEntity<Subject> subjects(@PathVariable("studentId") Long studentId, @RequestBody Subject subject) {
-//        Subject newLoan = studentService.saveSubject(studentId, subject);
-//        return ResponseEntity.ok(subject);
-//    }
+    @GetMapping("/subjects/{studentId}")
+    public ResponseEntity<List<Subject>> getSubjectById(@PathVariable("studentId") Long studentId) {
+        Student student = studentService.getStudent(studentId);
+        List<Subject> subjects = studentService.getSubject(studentId);
+        return ResponseEntity.ok(subjects);
+    }
+
 }

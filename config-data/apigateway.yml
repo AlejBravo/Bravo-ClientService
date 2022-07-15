@@ -14,7 +14,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: studentservice
+        - id: student-service
           uri: lb://student-service
           predicates:
             - Path=/students/**

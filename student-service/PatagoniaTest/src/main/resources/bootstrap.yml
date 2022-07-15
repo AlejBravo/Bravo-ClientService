@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -17,3 +18,4 @@ spring:
     hibernate.ddl-auto: update
   application:
     name: studentservice
+

@@ -1,20 +1,14 @@
 package com.example.patagoniatest.service;
 
+import com.example.patagoniatest.config.RestTemplate;
 import com.example.patagoniatest.entity.Subject;
 import com.example.patagoniatest.feignclient.SubjectFeignClient;
 import com.example.patagoniatest.model.Student;
 import com.example.patagoniatest.repository.StudentRepository;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -24,6 +18,9 @@ public class StudentService {
 
     @Autowired
     SubjectFeignClient subjectFeignClient;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     public List<Student> getStudents() {
         return studentRepository.findAll();
@@ -37,13 +34,17 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
-    public Optional<Student> getStudent(Long id) {
-        return studentRepository.findById(id);
+    public Student getStudent(Long id) {
+        return studentRepository.findById((id);
     }
 
     public Subject saveSubject(Long studentId, Subject subject){
         subject.setId(studentId);
         Subject newSubject = subjectFeignClient.saveSubject(subject);
         return newSubject;
+    }
+    public List<Subject> getSubject(Long studentId) {
+        List<Subject> subjects = restTemplate.("http://subject-service/subject/byuser/" + studentId, List.class);
+        return (List<Subject>) subjectFeignClient.;
     }
 }
