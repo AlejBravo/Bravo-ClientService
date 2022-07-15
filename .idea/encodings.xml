@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/EurekaServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EurekaServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apigateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apigateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-service/PatagoniaTest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/student-service/PatagoniaTest/src/main/resources" charset="UTF-8" />

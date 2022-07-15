@@ -10,10 +10,12 @@
         <module name="EurekaServer" />
         <module name="PatagoniaTest" />
         <module name="config-service" />
-        <module name="loan-service" />
+        <module name="subject-service" />
+        <module name="apigateway-microservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="apigateway-microservice" target="11" />
       <module name="config-service" target="11" />
       <module name="EurekaServer" target="11" />
       <module name="loan-service" target="11" />
@@ -25,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="EurekaServer" options="-parameters" />
       <module name="PatagoniaTest" options="-parameters" />
+      <module name="apigateway-microservice" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="loan-service" options="-parameters" />
       <module name="subject-service" options="-parameters" />

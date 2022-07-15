@@ -5,8 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Bravo-service.iml" filepath="$PROJECT_DIR$/.idea/Bravo-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/student-service/PatagoniaTest/PatagoniaTest.iml" filepath="$PROJECT_DIR$/student-service/PatagoniaTest/PatagoniaTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apigateway/apigateway-microservice.iml" filepath="$PROJECT_DIR$/apigateway/apigateway-microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/subject-service/loan-service.iml" filepath="$PROJECT_DIR$/subject-service/loan-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subject-service/subject-service.iml" filepath="$PROJECT_DIR$/subject-service/subject-service.iml" />
     </modules>
   </component>
 </project>

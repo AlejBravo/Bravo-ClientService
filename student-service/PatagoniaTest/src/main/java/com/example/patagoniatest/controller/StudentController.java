@@ -36,7 +36,7 @@ public class StudentController {
 
     @PostMapping("/saveSubject/{studentId}")
     public ResponseEntity<Subject> saveSubject(@PathVariable("studentId") Long studentId, @RequestBody Subject subject) {
-        Subject newLoan = studentService.saveSubject(studentId, subject);
+        Subject newSubject = studentService.saveSubject(studentId, subject);
         return ResponseEntity.ok(subject);
     }
 

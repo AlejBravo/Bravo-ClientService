@@ -4,6 +4,8 @@ spring:
     url: jdbc:mysql://localhost:3306/tpmicroservices
     username: AleBrv
     password: 2292tobito?
+  main:
+    allow-bean-definition-overriding: true
 
   cloud:
     config:

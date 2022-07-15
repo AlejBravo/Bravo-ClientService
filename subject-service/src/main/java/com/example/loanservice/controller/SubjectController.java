@@ -20,9 +20,9 @@ public class SubjectController {
     }
 
     @PostMapping()
-    public ResponseEntity<Subject> saveLoan(@RequestBody Subject subject) {
-        Subject newLoan = subjectService.saveLoan(subject);
-        return ResponseEntity.ok(newLoan);
+    public ResponseEntity<Subject> saveSubject(@RequestBody Subject subject) {
+        Subject newSubject = subjectService.saveSubject(subject);
+        return ResponseEntity.ok(newSubject);
     }
 
 

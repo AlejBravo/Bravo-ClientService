@@ -14,7 +14,7 @@ public class SubjectService {
     @Autowired
     SubjectRepository subjectRepository;
 
-    public Subject saveLoan(Subject loan){
+    public Subject saveSubject(Subject loan){
         Subject newSubject = subjectRepository.save(loan);
         return newSubject;
     }
