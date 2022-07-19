@@ -5,3 +5,15 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tpmicroservices
+    username: AleBrv
+    password: 2292tobito?
+  main:
+    allow-bean-definition-overriding: true
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
