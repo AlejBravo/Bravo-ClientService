@@ -5,9 +5,8 @@ spring:
     config:
       server:
         git:
-          default-label: microservices
+          default-label: updating-microservices
           uri: https://github.com/AlejBravo/Bravo-ClientService.git
           search-paths: config-data
-
-application:
-  name: config-service
+  application:
+    name: config-service
