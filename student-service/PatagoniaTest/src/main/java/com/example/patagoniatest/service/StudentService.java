@@ -1,6 +1,6 @@
 package com.example.patagoniatest.service;
 
-import com.example.patagoniatest.config.RestTemplate;
+//import com.example.patagoniatest.config.RestTemplate;
 import com.example.patagoniatest.entity.Subject;
 import com.example.patagoniatest.feignclient.SubjectFeignClient;
 import com.example.patagoniatest.model.Student;
@@ -19,9 +19,6 @@ public class StudentService {
     @Autowired
     SubjectFeignClient subjectFeignClient;
 
-    @Autowired
-    RestTemplate restTemplate;
-
     public List<Student> getStudents() {
         return studentRepository.findAll();
     }
@@ -34,17 +31,17 @@ public class StudentService {
         studentRepository.deleteById(id);
     }
 
-    public Student getStudent(Long id) {
-        return studentRepository.findById((id);
-    }
+//    public Student getStudent(Long id) {
+//        return studentRepository.findById((id);
+//    }
 
     public Subject saveSubject(Long studentId, Subject subject){
         subject.setId(studentId);
         Subject newSubject = subjectFeignClient.saveSubject(subject);
         return newSubject;
     }
-    public List<Subject> getSubject(Long studentId) {
-        List<Subject> subjects = restTemplate.("http://subject-service/subject/byuser/" + studentId, List.class);
-        return (List<Subject>) subjectFeignClient.;
-    }
+//    public List<Subject> getSubject(Long studentId) {
+//        List<Subject> subjects = restTemplate.("http://subject-service/subject/byuser/" + studentId, List.class);
+//        return (List<Subject>) subjectFeignClient.;
+//    }
 }

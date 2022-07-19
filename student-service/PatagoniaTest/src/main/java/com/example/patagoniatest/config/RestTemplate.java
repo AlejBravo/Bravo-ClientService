@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
-@Configuration
-public class RestTemplate {
-    @Bean
-    public RestTemplate restTemplate() {
-       return new RestTemplate();
-    }
-}
+//@Configuration
+//public class RestTemplate {
+//    @Bean
+//    public RestTemplate restTemplate() {
+//       return new RestTemplate();
+//    }
+//}

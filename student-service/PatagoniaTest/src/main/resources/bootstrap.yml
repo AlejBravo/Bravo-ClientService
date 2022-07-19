@@ -17,5 +17,5 @@ spring:
     show-sql: true
     hibernate.ddl-auto: update
   application:
-    name: studentservice
+    name: student-service
 

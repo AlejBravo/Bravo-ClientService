@@ -26,11 +26,6 @@ public class StudentController {
         return studentService.getStudents();
     }
 
-    @GetMapping("/{id}")
-    public Student getStudent(@PathVariable Long studentId){
-        return studentService.getStudent(studentId);
-    }
-
     @PostMapping("/addStudent")
     public Student addStudent(@RequestBody Student student){
         return studentService.addStudent(student);
@@ -47,11 +42,16 @@ public class StudentController {
         return ResponseEntity.ok(subject);
     }
 
-    @GetMapping("/subjects/{studentId}")
-    public ResponseEntity<List<Subject>> getSubjectById(@PathVariable("studentId") Long studentId) {
-        Student student = studentService.getStudent(studentId);
-        List<Subject> subjects = studentService.getSubject(studentId);
-        return ResponseEntity.ok(subjects);
-    }
+    //    @GetMapping("/{id}")
+//    public Student getStudent(@PathVariable Long studentId){
+//        return studentService.getStudent(studentId);
+//    }
+
+//    @GetMapping("/subjects/{studentId}")
+//    public ResponseEntity<List<Subject>> getSubjectById(@PathVariable("studentId") Long studentId) {
+//        Student student = studentService.getStudent(studentId);
+//        List<Subject> subjects = studentService.getSubject(studentId);
+//        return ResponseEntity.ok(subjects);
+//    }
 
 }
