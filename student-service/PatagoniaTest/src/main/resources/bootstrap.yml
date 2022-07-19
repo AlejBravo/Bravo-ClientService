@@ -1,21 +1,7 @@
-
 spring:
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/tpmicroservices
-    username: AleBrv
-    password: 2292tobito?
-  main:
-    allow-bean-definition-overriding: true
-
+  application:
+    name: student-service
   cloud:
     config:
       enabled: true
       uri: http://localhost:8081
-
-  jpa:
-    show-sql: true
-    hibernate.ddl-auto: update
-  application:
-    name: student-service
-
